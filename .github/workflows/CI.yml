@@ -22,9 +22,9 @@ jobs:
     - name: Checkout Test Script
       uses: actions/checkout@v2
       with:
-        repository: 3thannn/DevOpsQA
+        repository: lowkh2/DevOpsQARepo
         path: tests
-        tokens: ${{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}}
+        tokens: ${{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}}
 
     - name: Begin Pytest
       run:
