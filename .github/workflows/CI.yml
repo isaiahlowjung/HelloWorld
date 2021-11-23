@@ -22,7 +22,7 @@ jobs:
     - name: Checkout Test Script
       uses: actions/checkout@v2
       with:
-        repository: lowkh/DevOpsQARepo
+        repository: Lowkh/DevOpsQARepo
         path: tests
         tokens: ${{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}}
 
