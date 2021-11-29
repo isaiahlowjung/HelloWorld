@@ -12,7 +12,7 @@ jobs:
       with:
         python-version: 3.8
     - name: Install Libraries
-      run: 
+      run: |
         pip install flake8 pytest pytest-cov
         
     - name: Checkout Own Repo
@@ -27,6 +27,6 @@ jobs:
         tokens: ${{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}}
 
     - name: Begin Pytest
-      run:
+      run: |
         mv ./tests/*.* ./
         pytest --cov
