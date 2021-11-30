@@ -24,7 +24,7 @@ jobs:
       with:
         repository: lowkh2/DevOpsQARepo
         path: tests
-        tokens: ${{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}}
+        tokens: ${{ secrets.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}}
     - name: Linter check with 
       run: |
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
