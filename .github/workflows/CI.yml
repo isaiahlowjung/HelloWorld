@@ -38,10 +38,10 @@ jobs:
       uses: nashmaniac/create-issuep-action@v1.1
       with:
           title: Build Failed
-          token: ${{}}
-          assignees: ${{}}
+          token: ${{secrets.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}}
+          assignees: ${{github.actor}}
           labels: workflow-failed
-          body: Workflow failed for commit ${{}} @ ${{}}
+          body: Workflow failed for commit ${{github.sha}} @ ${{github.ref}}
           
     - name: Publish Unit Test Resuls
       uses: EnricoMi/publish-unit-test-result-action@v1.24
