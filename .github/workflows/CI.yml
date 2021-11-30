@@ -25,8 +25,24 @@ jobs:
         repository: lowkh2/DevOpsQARepo
         path: tests
         tokens: ${{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}}
-
+    - name: Linter check with 
+      run: |
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics 
     - name: Begin Pytest
       run: |
         mv ./tests/*.* ./
         pytest --cov
+    - if: ${{failure()}}
+      name: Create Issues
+      uses: nashmaniac/create-issuep-action@v1.1
+      with:
+          title: Build Failed
+          token: ${{}}
+          assignees: ${{}}
+          labels: workflow-failed
+          body: Workflow failed for commit ${{}} @ ${{}}
+          
+    - name: Publish Unit Test Resuls
+      uses: EnricoMi/publish-unit-test-result-action@v1.24
+      
